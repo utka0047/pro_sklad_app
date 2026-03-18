@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Торнус Склад</string>
+    <string name="nav_home">Главная</string>
+    <string name="nav_products">Товары</string>
+    <string name="nav_movements">Движения</string>
+    <string name="scan">Сканировать</string>
+    <string name="income">Приход</string>
+    <string name="outcome">Расход</string>
+    <string name="inventory">Инвентаризация</string>
+    <string name="sync">Синхронизация</string>
+    <string name="total_products">Всего товаров</string>
+    <string name="low_stock">Мало на складе</string>
+    <string name="movements_today">Движений сегодня</string>
+    <string name="stock_value">Стоимость склада</string>
+    <string name="search_products">Поиск товаров</string>
+    <string name="no_products">Товары не найдены</string>
+    <string name="cancel">Отмена</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="quantity">Количество</string>
+    <string name="comment">Комментарий (необязательно)</string>
+    <string name="manual_input">Ручной ввод SKU</string>
+    <string name="enter_sku">Введите SKU</string>
+    <string name="flashlight">Фонарик</string>
+    <string name="low_stock_warning">⚠ Низкий остаток</string>
+    <string name="complete_inventory">Завершить инвентаризацию</string>
+    <string name="add_scan">Добавить товар</string>
+    <string name="expected">Ожидалось</string>
+    <string name="actual">Фактически</string>
+    <string name="difference">Разница</string>
+    <string name="no_inventory_items">Нет отсканированных товаров</string>
+</resources>

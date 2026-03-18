@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.tornus.pro_sklad.presentation.ui.home.HomeFragment"
+        android:label="Главная"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_scanner"
+            app:destination="@id/scannerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_home_to_movement"
+            app:destination="@id/movementFragment">
+            <argument android:name="productId" app:argType="integer" android:defaultValue="-1" />
+            <argument android:name="movementType" app:argType="string" android:defaultValue="IN" />
+        </action>
+        <action
+            android:id="@+id/action_home_to_inventory"
+            app:destination="@id/inventoryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="com.tornus.pro_sklad.presentation.ui.products.ProductListFragment"
+        android:label="Товары"
+        tools:layout="@layout/fragment_product_list">
+        <action
+            android:id="@+id/action_product_list_to_product_detail"
+            app:destination="@id/productDetailFragment">
+            <argument android:name="productId" app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/scannerFragment"
+        android:name="com.tornus.pro_sklad.presentation.ui.scanner.ScannerFragment"
+        android:label="Сканер"
+        tools:layout="@layout/fragment_scanner">
+        <action
+            android:id="@+id/action_scanner_to_product_detail"
+            app:destination="@id/productDetailFragment"
+            app:popUpTo="@id/scannerFragment"
+            app:popUpToInclusive="true">
+            <argument android:name="productId" app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.tornus.pro_sklad.presentation.ui.product.ProductDetailFragment"
+        android:label="Товар"
+        tools:layout="@layout/fragment_product_detail">
+        <argument android:name="productId" app:argType="integer" />
+        <action
+            android:id="@+id/action_product_detail_to_movement"
+            app:destination="@id/movementFragment">
+            <argument android:name="productId" app:argType="integer" />
+            <argument android:name="movementType" app:argType="string" android:defaultValue="IN" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/movementFragment"
+        android:name="com.tornus.pro_sklad.presentation.ui.movement.MovementFragment"
+        android:label="Операция"
+        tools:layout="@layout/fragment_movement">
+        <argument android:name="productId" app:argType="integer" android:defaultValue="-1" />
+        <argument android:name="movementType" app:argType="string" android:defaultValue="IN" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/inventoryFragment"
+        android:name="com.tornus.pro_sklad.presentation.ui.inventory.InventoryFragment"
+        android:label="Инвентаризация"
+        tools:layout="@layout/fragment_inventory" />
+
+</navigation>
